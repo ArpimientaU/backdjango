@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render, redirect
 from apps.vehiculos.formVehiculo import VehiculoForm
 from apps.vehiculos.models import Vehiculo
 
