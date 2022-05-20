@@ -44,8 +44,8 @@
                     <td>{{ vehiculo.marca }}</td>
                     <td>{{ vehiculo.tipovehiculo }}</td>
                     <td>
-                        <a href="{% url 'vehiculos:vehiculoDelete' vehiculo.id %}" class="btn btn-primary">eliminar</a>    
-                        <a href="{% url 'vehiculos:vehiculoUpdate' vehiculo.id %}" class="btn btn-primary">editar</a>    
+                        <a href="{% url 'vehiculos:vehiculoDelete' vehiculo.id %}" class="btn btn-primary">eliminar</a>
+                        <a href="{% url 'vehiculos:vehiculoUpdate' vehiculo.id %}" class="btn btn-primary">editar</a>
                     </td>
                 </tr>
             {% endfor %}
