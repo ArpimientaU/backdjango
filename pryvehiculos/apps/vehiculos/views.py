@@ -21,3 +21,19 @@ def vehiculoCreate(request):
     else:
         form=VehiculoForm()
     return render(request, 'vehiculos/vehiculo_form.html', {'form':form})
+
+def vehiculoUpdate(request,id):
+    vehiculo = Vehiculo.objects.get(id=id)
+    if request.method == 'GET':
+        form = VehiculoForm(instance=vehiculo)
+    else:
+        form = VehiculoForm(request.POST, instance=vehiculo)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request, 'vehiculos/vehiculo_form.html', {'form':form})
+
+def vehiculoDelete(request,id):
+    vehiculo = Vehiculo.objects.get(id=id)
+    vehiculo.delete()
+    return redirect('vehiculos:listVehiculos')
